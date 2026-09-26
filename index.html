@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KoL — Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="stars-layer" id="starsLayer" aria-hidden="true">
+        <div class="shooting-star" style="top:8%; left:75%; animation-delay:0s; animation-duration:8s;"></div>
+        <div class="shooting-star" style="top:22%; left:48%; animation-delay:2.8s; animation-duration:10s;"></div>
+        <div class="shooting-star" style="top:5%; left:18%; animation-delay:5.5s; animation-duration:7s;"></div>
+        <div class="shooting-star" style="top:34%; left:92%; animation-delay:7.2s; animation-duration:11s;"></div>
+        <div class="shooting-star" style="top:48%; left:62%; animation-delay:9s; animation-duration:9s;"></div>
+        <div class="shooting-star" style="top:14%; left:34%; animation-delay:1.4s; animation-duration:12s;"></div>
+        <div class="shooting-star" style="top:29%; left:78%; animation-delay:4.6s; animation-duration:8.5s;"></div>
+        <div class="shooting-star" style="top:41%; left:27%; animation-delay:6.8s; animation-duration:10.5s;"></div>
+        <div class="shooting-star" style="top:57%; left:86%; animation-delay:8.2s; animation-duration:9.5s;"></div>
+        <div class="shooting-star" style="top:64%; left:52%; animation-delay:10.4s; animation-duration:12.5s;"></div>
+        <div class="shooting-star" style="top:73%; left:18%; animation-delay:3.2s; animation-duration:11.5s;"></div>
+        <div class="shooting-star" style="top:82%; left:70%; animation-delay:12s; animation-duration:10s;"></div>
+        <div class="shooting-star" style="top:91%; left:42%; animation-delay:14s; animation-duration:13s;"></div>
+    </div>
+
+    <nav class="topbar" aria-label="Primary navigation">
+        <a class="brand" href="#top">KoL.dev</a>
+        <span class="date-time" aria-label="Current date and time">
+            <time id="currentDate"></time>
+            <time id="currentTime"></time>
+        </span>
+        <div class="nav">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to black theme">
+                <span class="theme-icon" aria-hidden="true">☼</span>
+                <span class="theme-text">Black</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="wrap hero-grid">
+            <div>
+                <h1 class="type-line" id="typeLine">&nbsp;<span class="cursor">&nbsp;</span></h1>
+                <div class="role-tag"><span class="dot"></span>available for backend &amp; systems work</div>
+                <p class="hero-sub">I design and build the parts of a product users never see directly — APIs, data
+                    models, queues, the plumbing that has to hold up under real traffic.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#work">See my work <span aria-hidden="true">↓</span></a>
+                    <a class="button" href="mailto:kolawolefavour20@gmail.com">Let's talk <span
+                            aria-hidden="true">↗</span></a>
+                </div>
+                <div class="scroll-cue">↓ selected work</div>
+            </div>
+            <div class="diagram-frame">
+                <div class="rubik-scene" aria-label="An animated Rubik's cube assembling from scattered pieces">
+                    <div class="rubik-cube" id="rubikCube"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrap">
+        <section class="section" id="work">
+            <div class="section-head">
+                <h2>Selected work</h2><span>02 shipped</span>
+            </div>
+            <article class="project">
+                <h3>FormSlug</h3>
+                <p class="desc">A multi-tenant, Formspree-style backend that lets developers collect form submissions
+                    from static, frontend-only sites without standing up their own server. Handles auth, per-project API
+                    keys, email notifications, and rate limiting out of the box.</p>
+                <div class="stack">
+                    <span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span>
+                </div>
+                <a class="project-link" href="https://github.com/KoL-200" target="_blank" rel="noopener">view repository
+                    →</a>
+            </article>
+            <article class="project">
+                <h3>AutoBot</h3>
+                <p class="desc">A tool for small businesses that turns one email template and a list of recipients into
+                    individually personalized, individually tracked emails — built to remove the manual work of writing
+                    the same message hundreds of times.</p>
+                <div class="stack"><span>Node.js</span><span>CSV import</span><span>Email delivery</span><span>Delivery
+                        tracking</span></div>
+                <a class="project-link" href="https://github.com/KoL-200" target="_blank" rel="noopener">view repository
+                    →</a>
+            </article>
+        </section>
+
+        <section class="section" id="about">
+            <div class="section-head">
+                <h2>About me</h2><span>03 profile</span>
+            </div>
+            <div class="about-grid">
+                <div>
+                    <p>I'm a backend engineer who enjoys turning ambiguous product ideas into dependable systems. My
+                        focus is thoughtful API design, practical data modeling, and infrastructure that stays easy to
+                        understand as a team grows.</p>
+                    <p>When I'm away from the terminal, I'm usually learning something new, writing notes, or looking
+                        for a better way to explain a complicated idea.</p>
+                </div>
+                <aside class="contact-panel" id="contact">
+                    <h3>Have a problem worth solving?</h3>
+                    <p>I'm open to backend engineering roles, freelance builds, and conversations about reliable
+                        systems.</p>
+                    <a href="mailto:kolawolefavour20@gmail.com">kolawolefavour20@gmail.com ↗</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="wrap">
+        <div class="footer-row">
+            <span class="note">designed &amp; built by KoL — {{YEAR}}</span>
+            <div class="socials">
+                <a href="https://github.com/KoL-200" aria-label="GitHub" target="_blank" rel="noopener"><svg
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg></a>
+                <a href="https://www.linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><svg
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M14.82 0H1.18C.53 0 0 .52 0 1.16v13.68C0 15.48.53 16 1.18 16h13.64c.65 0 1.18-.52 1.18-1.16V1.16C16 .52 15.47 0 14.82 0zM4.75 13.64H2.38V6.16h2.37v7.48zM3.56 5.14a1.37 1.37 0 1 1 0-2.74 1.37 1.37 0 0 1 0 2.74zm10.08 8.5h-2.37V9.99c0-.87-.02-1.99-1.21-1.99-1.22 0-1.4.95-1.4 1.93v3.71H6.29V6.16h2.28v1.02h.03c.32-.6 1.09-1.23 2.24-1.23 2.4 0 2.84 1.58 2.84 3.63v4.06z" />
+                    </svg></a>
+                <a href="https://x.com" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M12.6 0h2.45l-5.35 6.11L16 16h-4.94l-3.87-5.06L2.76 16H.3l5.72-6.54L0 0h5.06l3.5 4.63L12.6 0zm-.86 14.37h1.36L4.32 1.55H2.87l8.87 12.82z" />
+                    </svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
