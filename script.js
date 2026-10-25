@@ -76,6 +76,29 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+const workPagination = document.querySelector('.work-pagination');
+const workProjects = [...document.querySelectorAll('.project[data-work-page]')];
+const workPageButtons = [...document.querySelectorAll('[data-page-button]')];
+const workPageStatus = document.querySelector('.work-page-status');
+
+if (workPagination && workProjects.length && workPageButtons.length && workPageStatus) {
+    function showWorkPage(page) {
+        workProjects.forEach((project) => {
+            project.hidden = project.dataset.workPage !== page;
+        });
+        workPageButtons.forEach((button) => {
+            button.setAttribute('aria-pressed', String(button.dataset.pageButton === page));
+        });
+        workPageStatus.textContent = `Page ${page} of ${workPageButtons.length}`;
+    }
+
+    workPageButtons.forEach((button) => {
+        button.addEventListener('click', () => showWorkPage(button.dataset.pageButton));
+    });
+    showWorkPage(workPageButtons[0].dataset.pageButton);
+    workPagination.hidden = false;
+}
+
 const rubikCube = document.getElementById('rubikCube');
 const faceNames = ['front', 'back', 'right', 'left', 'top', 'bottom'];
 

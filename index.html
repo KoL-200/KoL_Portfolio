@@ -73,9 +73,9 @@
     <main class="wrap">
         <section class="section" id="work">
             <div class="section-head">
-                <h2>Selected work</h2><span>02 shipped</span>
+                <h2>Selected work</h2><span>03 projects · 2 pages</span>
             </div>
-            <article class="project">
+            <article class="project" data-work-page="1">
                 <h3>FormSlug</h3>
                 <p class="desc">A multi-tenant, Formspree-style backend that lets developers collect form submissions
                     from static and frontend-only websites without managing their own server. Handles authentication,
@@ -89,7 +89,7 @@
                     Swagger
                     →</a>
             </article>
-            <article class="project">
+            <article class="project" data-work-page="1">
                 <h3>MultiVendor Ecommerce</h3>
                 <p class="desc">A multi-vendor e-commerce backend that enables vendors to manage stores, products,
                     inventory, and orders while giving customers a secure shopping experience — built to handle
@@ -101,6 +101,23 @@
                     target="_blank" rel="noopener">view on swagger
                     →</a>
             </article>
+            <article class="project" data-work-page="2">
+                <h3>Compass AI</h3>
+                <p class="desc">An opportunity-intelligence API that brings admissions, scholarships, internships,
+                    and jobs into one place. It combines profile-based matching, rules-driven eligibility, application
+                    tracking, and deadline reminders, with AI-assisted guidance designed to keep eligibility decisions
+                    deterministic. Its AI provider is currently a deterministic mock.</p>
+                <div class="stack">
+                    <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>SQLAlchemy</span><span>Alembic</span>
+                </div>
+                <a class="project-link" href="https://github.com/KoL-200/compass-ai-backend" target="_blank"
+                    rel="noopener">View on GitHub ↗</a>
+            </article>
+            <nav class="work-pagination" aria-label="Selected work pages" hidden>
+                <button class="work-page-button" type="button" data-page-button="1" aria-pressed="true">1</button>
+                <button class="work-page-button" type="button" data-page-button="2" aria-pressed="false">2</button>
+                <span class="work-page-status" aria-live="polite">Page 1 of 2</span>
+            </nav>
         </section>
 
         <section class="section" id="about">

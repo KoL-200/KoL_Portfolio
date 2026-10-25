@@ -547,6 +547,43 @@ body[data-theme="dark"] .stars-layer {
     border-bottom-color: var(--accent-dark);
 }
 
+.work-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.work-page-button {
+    min-width: 38px;
+    min-height: 38px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-soft);
+    font-family: 'IBM Plex Mono', monospace;
+    cursor: pointer;
+}
+
+.work-page-button:hover,
+.work-page-button[aria-pressed="true"] {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: #fff;
+}
+
+.work-page-button:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+}
+
+.work-page-status {
+    margin-left: 4px;
+    color: var(--ink-soft);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr .8fr;
