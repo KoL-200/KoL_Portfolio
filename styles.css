@@ -595,6 +595,12 @@ body[data-theme="dark"] .stars-layer {
     font-size: 16px;
 }
 
+.cv-text {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0 0 22px;
+}
+
 .contact-panel {
     background: var(--ink);
     color: var(--paper);
