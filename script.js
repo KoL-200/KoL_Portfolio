@@ -1,6 +1,5 @@
 const phrases = [
-    "Hi,",
-    "I'm KoL.",
+    "Hi, I'm KoL.",
     "A Backend Engineer.",
     "I specialize in system design & clean architecture."
 ];
@@ -146,3 +145,20 @@ for (let i = 0; i < 220; i++) {
     star.style.boxShadow = `0 0 ${2 + Math.random() * 7}px var(--star-glow)`;
     starsLayer.appendChild(star);
 }
+
+
+const navLinks = [...document.querySelectorAll('.nav-pill a')];
+const spySections = navLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+const spy = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+        });
+    });
+}, { rootMargin: '-40% 0px -55% 0px' });
+
+spySections.forEach((section) => spy.observe(section));
