@@ -162,3 +162,28 @@ const spy = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -55% 0px' });
 
 spySections.forEach((section) => spy.observe(section));
+
+const servicesGrid = document.querySelector('.services-grid');
+const flipCards = [...document.querySelectorAll('.flip-card')];
+
+if (servicesGrid && flipCards.length) {
+    // tap to flip on touch devices (hover handles desktop in CSS)
+    const touchOnly = window.matchMedia('(hover: none)');
+    flipCards.forEach((card, i) => {
+        card.style.setProperty('--i', i);
+        card.addEventListener('click', () => {
+            if (touchOnly.matches) card.classList.toggle('is-flipped');
+        });
+    });
+
+    // staggered fade-up when the grid scrolls into view
+    servicesGrid.classList.add('reveal-ready');
+    const reveal = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            flipCards.forEach((card) => card.classList.add('in'));
+            reveal.disconnect();
+        });
+    }, { threshold: 0.15 });
+    reveal.observe(servicesGrid);
+}

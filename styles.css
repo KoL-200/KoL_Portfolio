@@ -687,6 +687,188 @@ body[data-theme="dark"] .stars-layer {
     font-size: 12px;
 }
 
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.flip-card {
+    perspective: 1000px;
+    outline: none;
+    cursor: pointer;
+}
+
+.flip-inner {
+    display: grid;
+    min-height: 310px;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.4, .2, .2, 1);
+}
+
+.flip-face {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 24px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: background-color .45s ease, border-color .45s ease, color .45s ease;
+}
+
+.flip-front {
+    background: var(--surface);
+}
+
+.flip-back {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    transform: rotateY(180deg);
+    justify-content: center;
+}
+
+.card-index {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-dark);
+    margin-bottom: 14px;
+}
+
+.flip-face h3 {
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.flip-front p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 10px 0 0;
+}
+
+.chip-list,
+.back-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chip-list {
+    margin-top: auto;
+    padding-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-list li {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    background: rgba(29, 109, 104, 0.08);
+    padding: 4px 9px;
+    border-radius: 6px;
+}
+
+.flip-hint {
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    opacity: .75;
+}
+
+.flip-hint::after {
+    content: "tap to flip ↻";
+}
+
+.back-list {
+    margin-top: 16px;
+    display: grid;
+    gap: 12px;
+}
+
+.back-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.back-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.flip-card:focus-visible .flip-face {
+    border-color: var(--accent);
+}
+
+.flip-card.is-flipped .flip-inner,
+.flip-card:focus-visible .flip-inner {
+    transform: rotateY(180deg);
+}
+
+@media (hover: hover) {
+    .flip-hint::after {
+        content: "hover to flip ↻";
+    }
+
+    .flip-card:hover .flip-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:not(:hover) .flip-front {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* scroll-in animation (only active once JS marks the grid ready) */
+.services-grid.reveal-ready .flip-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s ease, transform .6s ease;
+    transition-delay: calc(var(--i, 0) * 110ms);
+}
+
+.services-grid.reveal-ready .flip-card.in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 1000px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flip-inner {
+        min-height: 260px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .flip-inner,
+    .services-grid.reveal-ready .flip-card {
+        transition: none;
+    }
+
+    .services-grid.reveal-ready .flip-card {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr .8fr;
